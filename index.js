@@ -21,7 +21,7 @@ async function run() {
         });
 
         console.log(`Reactions: ${reactions}`);
-        console.log(`Count: ${reactions.length}`);
+        console.log(`Count: ${reactions[0]}`);
         core.setOutput("count", reactions.length);
     } catch (error) {
         core.setFailed(error.message);
