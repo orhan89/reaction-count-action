@@ -6,11 +6,12 @@ async function run() {
         // `who-to-greet` input defined in action metadata file
         const token = core.getInput('token');
         const reaction = core.getInput('reaction');
+        const issue: {owner: string; repo: string; number: number} = github.context.issue;
+
         console.log(`Reaction: ${reaction}!`);
 
         const octokit = new github.GitHub(token);
 
-        const issue: {owner: string; repo: string; number: number} = github.context.issue;
         const reactions = await octokit.reactions.listForIssue({
             ...issue,
             reaction
