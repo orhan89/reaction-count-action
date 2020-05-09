@@ -8,8 +8,8 @@ async function run() {
         const reaction = core.getInput('reaction');
         const issue = github.context.issue;
 
-        console.log('Reaction: ${reaction}!');
-        console.log('Issue: ${issue}!');
+        console.log(`Reaction: ${reaction}!`);
+        console.log(`Issue: ${issue}!`);
 
         const octokit = new github.GitHub(token);
 
@@ -18,8 +18,8 @@ async function run() {
             reaction
         });
 
-        console.log('Reactions: ${reactions}');
-        console.log('Count: ${reactions.length}');
+        console.log(`Reactions: ${reactions}`);
+        console.log(`Count: ${reactions.length}`);
         core.setOutput("count", reactions.length);
     } catch (error) {
         core.setFailed(error.message);
