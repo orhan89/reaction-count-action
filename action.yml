@@ -12,5 +12,5 @@ outputs:
     description: 'count'
     default: 0
 runs:
-  using: 'node13'
+  using: 'node12'
   main: 'index.js'
