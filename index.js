@@ -10,10 +10,9 @@ async function run() {
 
         const octokit = new github.GitHub(token);
 
+        const issue: {owner: string; repo: string; number: number} = github.context.issue;
         const reactions = await octokit.reactions.listForIssue({
-            github.context.owner,
-            github.context.repo,
-            github.context.payload.issue.number,
+            ...issue,
             reaction
         });
 
