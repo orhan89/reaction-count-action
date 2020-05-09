@@ -9,7 +9,9 @@ async function run() {
         const issue = github.context.issue;
 
         console.log(`Reaction: ${reaction}!`);
-        console.log(`Issue: ${issue}!`);
+        console.log(`Issue: ${issue.owner}!`);
+        console.log(`Issue: ${issue.repo}!`);
+        console.log(`Issue: ${issue.number}!`);
 
         const octokit = new github.GitHub(token);
 
