@@ -18,6 +18,8 @@ async function run() {
             reaction
         });
 
+        console.log(reactions);
+        console.log(reactions.length);
         core.setOutput("count", reactions.length);
     } catch (error) {
         core.setFailed(error.message);
