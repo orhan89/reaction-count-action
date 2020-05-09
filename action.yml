@@ -1,0 +1,16 @@
+name: 'Get Reaction Count'
+description: 'Get count of reaction an issue has'
+inputs:
+  token:
+    description: 'Github Token'
+    required: true
+  reaction:
+    description: 'type of reaction to count'
+    required: true
+outputs:
+  time:
+    description: 'count'
+    default: 0
+runs:
+  using: 'node13'
+  main: 'index.js'
