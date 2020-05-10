@@ -15,7 +15,7 @@ async function run() {
 
         const octokit = new github.GitHub(token);
 
-        const reactions = await octokit.reactions.listForIssue({
+        const { data: reactions } = await octokit.reactions.listForIssue({
             ...issue,
             reaction
         });
